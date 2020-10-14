@@ -29,3 +29,38 @@ map.on('click', (event)=> {
     .addTo(map)
 })
 
+//adicionar o campo de fotos
+const addPhotoField = () => {
+    const container = document.querySelector('#images')
+    const fieldsContainer = document.querySelectorAll('.new-upload')
+    const newFieldContainer = fieldsContainer[fieldsContainer.length - 1].cloneNode(true)
+    const input = newFieldContainer.children[0]
+
+    if(input.value.trim() === '') return
+
+    input.value = ''
+    container.appendChild(newFieldContainer)
+}
+
+const deleteField = (event) => {
+    const span = event.currentTarget
+    const fieldsContainer = document.querySelectorAll('.new-upload')
+
+    if(fieldsContainer.length < 2){
+        span.parentNode.children[0].value = ""
+        return
+    }
+
+    span.parentNode.remove()
+}
+
+const toggleSelect = (event) => {
+    document.querySelectorAll('.button-select button')
+    .forEach((button) => button.classList.remove('active'))
+
+    const button = event.currentTarget
+    button.classList.add('active')
+
+    const input = document.querySelector('[name="open-on-weekends]')
+    input.value = button.dataset.value
+}
