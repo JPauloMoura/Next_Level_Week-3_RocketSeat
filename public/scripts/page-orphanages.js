@@ -6,7 +6,7 @@ L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png').addTo(map);
 
 // create icon
 const icon = L.icon({
-    iconUrl:"./public/assets/map-marker.svg",
+    iconUrl:"/assets/map-marker.svg",
     iconSize:[58, 68],
     iconAnchor: [29, 68],
     popupAnchor: [170, 2] //popupAnchor
@@ -19,8 +19,8 @@ const popup = L.popup({
     minWidth: 240,
     minHeight: 240
 }).setContent(`Lar das meninas 
-    <a href="orphanage.html?id=1" class="choose-orphanage">
-        <img src="./public/assets/arrow-white.svg">
+    <a href="/orphanage?id=1" class="choose-orphanage">
+        <img src="/assets/arrow-white.svg">
     </a>`
 )
 
