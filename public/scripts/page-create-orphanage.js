@@ -64,3 +64,4 @@ const toggleSelect = (event) => {
     const input = document.querySelector('[name="open-on-weekends]')
     input.value = button.dataset.value
 }
+
