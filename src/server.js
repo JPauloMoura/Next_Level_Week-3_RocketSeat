@@ -4,6 +4,8 @@ const pages = require('./pages')
 const server = express()
 
 server
+// utilizando body do req p/ envio do formulário
+.use(express.urlencoded({ extended:true }))
 .use(express.static("public"))
 // conf. template
 .set("views", path.join(__dirname, "views"))
@@ -13,5 +15,6 @@ server
 .get('/orphanage', pages.orphanage)
 .get('/orphanages', pages.orphanages)
 .get('/create-orphanage', pages.createOrphanage)
+.post('/save-orphanage', pages.saveOrphanage)
 
 server.listen(5500)
